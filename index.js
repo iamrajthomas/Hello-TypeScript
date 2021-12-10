@@ -17,14 +17,19 @@ var __extends = (this && this.__extends) || (function () {
 exports.__esModule = true;
 var greetings = "Hello TypeScript";
 console.log("First Hello-World Message From TypeScript: ".concat(greetings));
-// PRIMITIVE DATATYPES 
+// VAR, LET AND CONST
 console.log("===================================================================");
-console.log("PRIMITIVE DATATYPES");
+console.log("VAR, LET AND CONST");
 console.log("===================================================================");
+var Championship = 'World Cup 2022';
 var Score = 0;
 var GameName = 'Chess';
 console.log("Let Variable: ".concat(Score));
 console.log("Const Variable: ".concat(GameName));
+// PRIMITIVE DATATYPES 
+console.log("===================================================================");
+console.log("PRIMITIVE DATATYPES");
+console.log("===================================================================");
 var FirstName = "Raj";
 var Age = 10;
 var IsActive = true;
@@ -37,6 +42,7 @@ console.log("===================================================================
 // IsActive.
 // UNDEFINED AND NULL DATATYPES 
 // This is not much of use, because primitive type can have null values [shown below]
+// In a way, we can say, null and undefined types are subset of primitive types
 var u = undefined;
 var n = null;
 var MiddleName = undefined;

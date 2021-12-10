@@ -3,17 +3,21 @@ export {}
 let greetings = "Hello TypeScript"
 console.log(`First Hello-World Message From TypeScript: ${greetings}`);
 
-// PRIMITIVE DATATYPES 
+// VAR, LET AND CONST
 console.log("===================================================================");
-console.log("PRIMITIVE DATATYPES");
+console.log("VAR, LET AND CONST");
 console.log("===================================================================");
 
+var Championship: string = 'World Cup 2022'; 
 let Score: number = 0;
 const GameName: string = 'Chess';
 console.log(`Let Variable: ${Score}`);
 console.log(`Const Variable: ${GameName}`);
 
-
+// PRIMITIVE DATATYPES 
+console.log("===================================================================");
+console.log("PRIMITIVE DATATYPES");
+console.log("===================================================================");
 let FirstName: string = "Raj"
 let Age : number = 10;
 let IsActive : boolean = true;
@@ -29,6 +33,7 @@ console.log("===================================================================
 
 // UNDEFINED AND NULL DATATYPES 
 // This is not much of use, because primitive type can have null values [shown below]
+// In a way, we can say, null and undefined types are subset of primitive types
 let u : undefined = undefined;
 let n : null = null;
 
@@ -137,7 +142,6 @@ console.log(Engeinner1);
 console.log(Engeinner2);
 
 
-
 // FUNCTION
 console.log("===================================================================");
 console.log("FUNCTION");
@@ -167,7 +171,6 @@ const SayHello4 = name => `Hello ${name} from Short-Hand Arrow Expression`;
 console.log(SayHello4('Sundar Pichai'));
 
 
-
 // ENUM
 console.log("===================================================================");
 console.log("ENUM");
@@ -182,9 +185,6 @@ let ThisMonthTransaction : TRANSACTION = TRANSACTION.UNPAID;
 let LastMonthTransaction : TRANSACTION = TRANSACTION.PAID;
 console.log(`LastMonthTransaction: ${LastMonthTransaction}`)
 console.log(`ThisMonthTransaction: ${ThisMonthTransaction}`)
-
-
-
 
 
 // INTERFACE
@@ -214,7 +214,6 @@ function GetAddressWithInterface(Address : Address) {
     console.log(`${Address.Lane1} -- ${Address.Lane2} -- Pin: ${Address.Pin}`)
     if(!Address.Pin)
         console.log(`${Address.Lane1} -- ${Address.Lane2}`)
-
 }
 
 let CustomAddress2 : Address = {
@@ -231,7 +230,6 @@ let CustomAddress3 : Address = {
 }
 
 GetAddressWithInterface(CustomAddress3);
-
 
 
 // CLASS
@@ -256,7 +254,6 @@ class Employee {
 
 }
 
-
 let employeeInstance1 = new Employee('Maxwell');
 console.log(employeeInstance1.DoSomeWork());
 console.log(employeeInstance1.Greet('Good Morning!!!!!!!'));
@@ -274,7 +271,6 @@ class Manager extends Employee {
 
 
 }
-
 
 let managerInstance1 = new Manager();
 console.log(managerInstance1.AttendMeeting())
