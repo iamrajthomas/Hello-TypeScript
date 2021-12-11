@@ -1,4 +1,4 @@
-"use strict";
+// export {}
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -14,7 +14,6 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-exports.__esModule = true;
 var greetings = "Hello TypeScript";
 console.log("First Hello-World Message From TypeScript: ".concat(greetings));
 // VAR, LET AND CONST
@@ -24,8 +23,12 @@ console.log("===================================================================
 var Championship = 'World Cup 2022';
 var Score = 0;
 var GameName = 'Chess';
-console.log("Let Variable: ".concat(Score));
-console.log("Const Variable: ".concat(GameName));
+console.log("Let Score Variable: ".concat(Score));
+console.log("Const GameName Variable: ".concat(GameName));
+Score = 10;
+console.log("Let Score Variable Afte Change: ".concat(Score));
+//ERROR : Cannot assign to 'GameName' because it is a constant.
+// GameName = 'Crikcet'; 
 // PRIMITIVE DATATYPES 
 console.log("===================================================================");
 console.log("PRIMITIVE DATATYPES");
@@ -45,6 +48,14 @@ console.log("===================================================================
 // In a way, we can say, null and undefined types are subset of primitive types
 var u = undefined;
 var n = null;
+// This can be used when strict mode is set to False
+// It will throw when strict mode is set to True
+// let MiddleName : string = undefined;
+// let MiddleAge : number = undefined;
+// let MiddleIsActive : boolean = undefined;
+// let LastName : string = null;
+// let LastAge : number = null;
+// let LastIsActive : boolean = null;
 var MiddleName = undefined;
 var MiddleAge = undefined;
 var MiddleIsActive = undefined;
@@ -204,19 +215,38 @@ console.log("CLASS");
 console.log("===================================================================");
 var Employee = /** @class */ (function () {
     function Employee(name) {
-        this.Greet = function (Message) {
-            return "".concat(Message, " by ").concat(this.EmployeeName);
-        };
         this.EmployeeName = name;
     }
+    // This will create problem later with "this" keyword 
+    // Error: 'this' implicitly has type 'any' because it does not have a type annotation.
+    // Greet = function(Message : string) {
+    //     return `${Message} by ${this.EmployeeName}`
+    // }
+    Employee.prototype.Greet = function (Message) {
+        return "".concat(Message, " by ").concat(this.EmployeeName);
+    };
     Employee.prototype.DoSomeWork = function () {
         return "".concat(this.EmployeeName, " Learnt TypeScript Basics!!!");
+    };
+    Employee.prototype.HasAppliedForLeave = function (flag) {
+        return flag;
+    };
+    Employee.prototype.FinancialDetails = function (flag) {
+        console.log('Some Financial Calculations and Operations');
+    };
+    Employee.prototype.GetIDCard = function (EmpID, Name) {
+        return "Emp ID: ".concat(EmpID, " -- Emp Name: ").concat(Name);
+    };
+    Employee.GetOrgName = function (orgName) {
+        return "My Org Name Is: ".concat(orgName.toUpperCase());
     };
     return Employee;
 }());
 var employeeInstance1 = new Employee('Maxwell');
 console.log(employeeInstance1.DoSomeWork());
 console.log(employeeInstance1.Greet('Good Morning!!!!!!!'));
+var orgName = Employee.GetOrgName('Eat Sleep Code Repeat');
+console.log(orgName);
 var Manager = /** @class */ (function (_super) {
     __extends(Manager, _super);
     function Manager() {

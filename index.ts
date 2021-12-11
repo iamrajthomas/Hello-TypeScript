@@ -1,4 +1,4 @@
-export {}
+// export {}
 
 let greetings = "Hello TypeScript"
 console.log(`First Hello-World Message From TypeScript: ${greetings}`);
@@ -11,8 +11,13 @@ console.log("===================================================================
 var Championship: string = 'World Cup 2022'; 
 let Score: number = 0;
 const GameName: string = 'Chess';
-console.log(`Let Variable: ${Score}`);
-console.log(`Const Variable: ${GameName}`);
+console.log(`Let Score Variable: ${Score}`);
+console.log(`Const GameName Variable: ${GameName}`);
+Score = 10;
+console.log(`Let Score Variable Afte Change: ${Score}`);
+
+//ERROR : Cannot assign to 'GameName' because it is a constant.
+// GameName = 'Crikcet'; 
 
 // PRIMITIVE DATATYPES 
 console.log("===================================================================");
@@ -177,7 +182,7 @@ const SayHello3 = (name: string) : string => {
 console.log(SayHello3('Elon Musk'));
 
 // 3. Short-Hand Arrow Function 
-const SayHello4 = name => `Hello ${name} from Short-Hand Arrow Expression`;
+const SayHello4 = (name : string) => `Hello ${name} from Short-Hand Arrow Expression`;
 console.log(SayHello4('Sundar Pichai'));
 
 
@@ -254,7 +259,13 @@ class Employee {
         this.EmployeeName = name;
     }
 
-    Greet = function(Message : string) {
+    // This will create problem later with "this" keyword 
+    // Error: 'this' implicitly has type 'any' because it does not have a type annotation.
+    // Greet = function(Message : string) {
+    //     return `${Message} by ${this.EmployeeName}`
+    // }
+
+    Greet(Message : string) {
         return `${Message} by ${this.EmployeeName}`
     }
 
@@ -262,12 +273,31 @@ class Employee {
         return `${this.EmployeeName} Learnt TypeScript Basics!!!`
     }
 
+    public HasAppliedForLeave(flag: boolean) : boolean {
+        return flag;
+    }
+    
+    private FinancialDetails(flag: boolean) : void {
+        console.log('Some Financial Calculations and Operations')
+    }
+    
+    protected GetIDCard(EmpID: string | number, Name: string) : string {
+        return `Emp ID: ${EmpID} -- Emp Name: ${Name}`
+    } 
+    
+    static GetOrgName(orgName: string) : string {
+        return `My Org Name Is: ${orgName.toUpperCase()}`
+    }
+
 }
+
 
 let employeeInstance1 = new Employee('Maxwell');
 console.log(employeeInstance1.DoSomeWork());
 console.log(employeeInstance1.Greet('Good Morning!!!!!!!'));
 
+let orgName = Employee.GetOrgName('Eat Sleep Code Repeat');
+console.log(orgName);
 
 class Manager extends Employee {
 
@@ -278,8 +308,6 @@ class Manager extends Employee {
     AttendMeeting = () => {
         return `Manager is in meeting!!`
     }
-
-
 }
 
 let managerInstance1 = new Manager();
