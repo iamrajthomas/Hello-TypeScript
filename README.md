@@ -12,6 +12,7 @@
 > Compile: tsc.index.ts
 > Watch TS Changes: tsc index.ts --watch 
 > Run: node index 
+> Initialize TypeScriptConfiguration: tsc --init
 
 ==========================================================================================
 

@@ -37,14 +37,24 @@ console.log("===================================================================
 let u : undefined = undefined;
 let n : null = null;
 
-let MiddleName : string = undefined;
-let MiddleAge : number = undefined;
-let MiddleIsActive : boolean = undefined;
+// This can be used when strict mode is set to False
+// It will throw when strict mode is set to True
 
-let LastName : string = null;
-let LastAge : number = null;
-let LastIsActive : boolean = null;
+// let MiddleName : string = undefined;
+// let MiddleAge : number = undefined;
+// let MiddleIsActive : boolean = undefined;
 
+// let LastName : string = null;
+// let LastAge : number = null;
+// let LastIsActive : boolean = null;
+
+let MiddleName : string | undefined  = undefined;
+let MiddleAge : number | undefined = undefined;
+let MiddleIsActive : boolean | undefined = undefined;
+
+let LastName : string | null = null;
+let LastAge : number | null = null;
+let LastIsActive : boolean | null = null;
 
 
 // ANY AND UNKNOWN DATATYPES 
